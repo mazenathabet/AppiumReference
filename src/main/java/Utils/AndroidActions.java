@@ -3,6 +3,7 @@ package Utils;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.DeviceRotation;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -13,6 +14,7 @@ import java.time.Duration;
 public class AndroidActions extends AppiumUtils{
     protected static AndroidDriver driver;
     protected WebDriverWait wait ;
+    private static DeviceRotation orientation;
     public AndroidActions(AndroidDriver driver) {
         AndroidActions.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -215,5 +217,12 @@ public class AndroidActions extends AppiumUtils{
                 "elementId", ((RemoteWebElement) element).getId(),
                 "percent", percentage
         ));
+    }
+
+    // Miscellaneous Functions
+
+    public static void rotateDevice( int x, int y, int z){
+        orientation = new DeviceRotation(x, y, z);
+        driver.rotate(orientation);
     }
 }

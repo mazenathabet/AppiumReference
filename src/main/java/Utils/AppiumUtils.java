@@ -22,5 +22,6 @@ public class AppiumUtils {
         System.out.println("Tearing down the Appium server ... "+"\n"+df.format(new Date())+
                 "\n----------------------------------------------------------------");
     }
+
 }
 
