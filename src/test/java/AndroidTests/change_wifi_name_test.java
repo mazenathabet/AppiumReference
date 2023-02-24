@@ -1,17 +1,20 @@
 package AndroidTests;
 
-import PageObjects.MainMenuPage;
+import PageObjects.Preference.PreferenceDependencies;
 import TestUtils.FrameworkInitialization;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class first_test extends FrameworkInitialization {
+public class change_wifi_name_test extends FrameworkInitialization {
 
     @Test
     public void appium_test(){
-        System.out.println("new test");
-        MainMenuPage mainMenuPage = new MainMenuPage(driver);
-//        mainMenuPage.clickAnimation();
-        mainMenuPage.clickPreference();
-
+        String actualTitle = mainMenuPage.clickPreference()
+                .clickPreferenceDependencies()
+                .enableWifi()
+                .changeWifiName("Super Wifi")
+                .getAlertTitle();
+        Assert.assertEquals(actualTitle,"WiFi settings","Alert title is not correct!");
+        new PreferenceDependencies(driver).saveChanges();
     }
 }

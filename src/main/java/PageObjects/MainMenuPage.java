@@ -1,5 +1,7 @@
 package PageObjects;
 
+import PageObjects.Preference.PreferencePage;
+import PageObjects.Views.ViewsPage;
 import Utils.AndroidActions;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -16,12 +18,20 @@ public class MainMenuPage extends AndroidActions {
      */
     By Animation = AppiumBy.accessibilityId("Animation");
     By Preference = AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Preference\"]");
-    public void clickAnimation(){
+    By Views = AppiumBy.accessibilityId("Views");
+
+    public void clickAnimation() {
         driver.findElement(Animation).click();
     }
-    public PreferencePage clickPreference(){
+
+    public PreferencePage clickPreference() {
         driver.findElement(Preference).click();
         return new PreferencePage(driver);
+    }
+
+    public ViewsPage clickViews() {
+        driver.findElement(Views).click();
+        return new ViewsPage(driver);
     }
 
 }

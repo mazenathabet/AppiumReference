@@ -4,10 +4,7 @@ import PageObjects.MainMenuPage;
 import Utils.AppiumUtils;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -25,7 +22,7 @@ public class FrameworkInitialization extends AppiumUtils {
     public void startServer(){
         AppiumUtils.startAppiumServer();
     }
-    @BeforeClass(alwaysRun = true)
+    @BeforeMethod(alwaysRun = true)
     public void startDriver() throws MalformedURLException {
         UiAutomator2Options options = new UiAutomator2Options();
         if (platform.equalsIgnoreCase("AndroidTests")) {
@@ -40,7 +37,7 @@ public class FrameworkInitialization extends AppiumUtils {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         mainMenuPage = new MainMenuPage(driver);
     }
-    @AfterClass(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void tearDownDriver() {
         driver.quit();
         System.out.println("Tearing down the driver ... "+"\n"+df.format(new Date())+

@@ -1,6 +1,5 @@
 package Utils;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
@@ -10,8 +9,6 @@ import java.util.Date;
 
 public class AppiumUtils {
     private static AppiumDriverLocalService service;
-    public static AppiumDriver driver;
-
     static SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     public static void startAppiumServer() {
         service = new AppiumServiceBuilder().withAppiumJS(new File("//usr//local//lib//node_modules//appium//build//lib//main.js"))

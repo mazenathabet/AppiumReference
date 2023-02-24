@@ -1,4 +1,4 @@
-package PageObjects;
+package PageObjects.Preference;
 
 import Utils.AndroidActions;
 import io.appium.java_client.AppiumBy;
@@ -11,7 +11,8 @@ public class PreferencePage extends AndroidActions {
     }
     By PreferenceDependencies = AppiumBy.accessibilityId("3. Preference dependencies");
 
-    public void clickPreferenceDependencies (){
+    public PreferenceDependencies clickPreferenceDependencies (){
         driver.findElement(PreferenceDependencies).click();
+        return new PreferenceDependencies(driver);
     }
 }
