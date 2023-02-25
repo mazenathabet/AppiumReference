@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class ClipboardTest extends FrameworkInitialization {
 
     @Test
-    public void clipboardTest(){
+    public void clipboardTest() {
         mainMenuPage.clickPreference()
                 .clickPreferenceDependencies()
                 .enableWifi();

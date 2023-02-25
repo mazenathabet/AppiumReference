@@ -6,19 +6,19 @@ import org.testng.annotations.Test;
 public class ScrollingTests extends FrameworkInitialization {
 
     @Test
-    public void scrollingIntoViewUsingUIAutomatorTest(){
+    public void scrollingIntoViewUsingUIAutomatorTest() {
         mainMenuPage.clickViews()
                 .scrollToWebView3();
     }
 
     @Test
-    public void scrollingToTheEnd(){
+    public void scrollingToTheEnd() {
         mainMenuPage.clickViews()
                 .scrollToTheEnd();
     }
 
     @Test
-    public void scrollingToEndWithCords(){
+    public void scrollingToEndWithCords() {
         mainMenuPage.clickViews()
                 .scrollToTheEnd();
     }

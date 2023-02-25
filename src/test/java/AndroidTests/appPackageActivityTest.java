@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class appPackageActivityTest extends FrameworkInitialization {
     @Test
-    public void appPackageActivityTest(){
+    public void appPackageActivityTest() {
         AndroidActions.StartAndroidActivity(driver,
                 "io.appium.android.apis",
                 "io.appium.android.apis.preference.PreferenceDependencies");

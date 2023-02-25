@@ -11,8 +11,8 @@ import java.util.Date;
 import java.util.Properties;
 
 public class AppiumUtils {
-    private static AppiumDriverLocalService service;
     static SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static AppiumDriverLocalService service;
 
     public static void startAppiumServer() throws IOException {
         Properties properties = new Properties();

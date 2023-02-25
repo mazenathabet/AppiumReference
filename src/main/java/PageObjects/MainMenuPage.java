@@ -8,10 +8,6 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
 public class MainMenuPage extends AndroidActions {
-    public MainMenuPage(AndroidDriver driver) {
-        super(driver);
-    }
-
     /**
      * AppiumBy -> exclusively for appium
      * By. -> generic locators
@@ -19,6 +15,9 @@ public class MainMenuPage extends AndroidActions {
     By Animation = AppiumBy.accessibilityId("Animation");
     By Preference = AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Preference\"]");
     By Views = AppiumBy.accessibilityId("Views");
+    public MainMenuPage(AndroidDriver driver) {
+        super(driver);
+    }
 
     public void clickAnimation() {
         driver.findElement(Animation).click();

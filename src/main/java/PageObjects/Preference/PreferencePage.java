@@ -6,12 +6,13 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
 public class PreferencePage extends AndroidActions {
+    By PreferenceDependencies = AppiumBy.accessibilityId("3. Preference dependencies");
+
     public PreferencePage(AndroidDriver driver) {
         super(driver);
     }
-    By PreferenceDependencies = AppiumBy.accessibilityId("3. Preference dependencies");
 
-    public PreferenceDependencies clickPreferenceDependencies (){
+    public PreferenceDependencies clickPreferenceDependencies() {
         driver.findElement(PreferenceDependencies).click();
         return new PreferenceDependencies(driver);
     }

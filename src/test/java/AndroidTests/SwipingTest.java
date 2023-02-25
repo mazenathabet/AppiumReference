@@ -8,17 +8,17 @@ import org.testng.annotations.Test;
 public class SwipingTest extends FrameworkInitialization {
 
     @Test
-    public void swipeImages(){
+    public void swipeImages() {
         Assert.assertTrue(mainMenuPage
-                .clickViews()
-                .clickGallery()
-                .clickPhotos()
-                .isFirstImageFocused()
-                ,"The image has not been swiped");
+                        .clickViews()
+                        .clickGallery()
+                        .clickPhotos()
+                        .isFirstImageFocused()
+                , "The image has not been swiped");
         Assert.assertFalse(new GalleryPage(driver)
-                .swipeImagesLeft()
-                .isFirstImageFocused()
-                ,"The image has not been swiped");
+                        .swipeImagesLeft()
+                        .isFirstImageFocused()
+                , "The image has not been swiped");
     }
 
 }
