@@ -2,6 +2,7 @@ package Utils;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.DeviceRotation;
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,10 +12,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class AndroidActions extends AppiumUtils{
+public class AndroidActions extends AppiumUtils {
     protected static AndroidDriver driver;
-    protected WebDriverWait wait ;
+    protected WebDriverWait wait;
     private static DeviceRotation orientation;
+
     public AndroidActions(AndroidDriver driver) {
         AndroidActions.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -51,11 +53,11 @@ public class AndroidActions extends AppiumUtils{
     }
 
     //    Pressing Actions :
+
     /**
-     *
-     *mobile: doubleClickGesture
+     * mobile: doubleClickGesture
      * This gesture performs double click action on the given element/coordinates. Available since Appium v1.21
-     *
+     * <p>
      * Supported arguments
      * elementId: The id of the element to be clicked. If the element is missing then both click offset coordinates must be provided. If both the element id and offset are provided then the coordinates are parsed as relative offsets from the top left corner of the element.
      * x: The x-offset coordinate
@@ -63,11 +65,12 @@ public class AndroidActions extends AppiumUtils{
      * Usage examples
      */
 
-    protected static void doubleClickGesture(WebElement element){
+    protected static void doubleClickGesture(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("mobile: doubleClickGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) element).getId()
         ));
     }
+
     /**
      * mobile: longClickGesture
      * This gesture performs long click action on the given element/coordinates. Available since Appium v1.19
@@ -79,7 +82,7 @@ public class AndroidActions extends AppiumUtils{
      *
      * @param element Web Element we want to click
      */
-    protected static void longPressAction(WebElement element,int millisecondsToHold) {
+    protected static void longPressAction(WebElement element, int millisecondsToHold) {
         ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) element).getId(),
                 "duration", millisecondsToHold
@@ -89,7 +92,7 @@ public class AndroidActions extends AppiumUtils{
     /**
      * mobile: clickGesture
      * This gesture performs click action on the given element/coordinates. Available since Appium UiAutomator2 driver 1.71.0. Usage of this gesture is recommended as a possible workaround for cases where the "native" tap call fails, even though tap coordinates seem correct. This issue is related to the fact these calls use the legacy UIAutomator-based calls while this extension is based on the same foundation as W3C does.
-     *
+     * <p>
      * Supported arguments
      * elementId: The id of the element to be clicked. If the element is missing then both click offset coordinates must be provided. If both the element id and offset are provided then the coordinates are parsed as relative offsets from the top left corner of the element.
      * x: The x-offset coordinate
@@ -97,7 +100,7 @@ public class AndroidActions extends AppiumUtils{
      * Usage examples
      */
 
-    protected static void clickGesture(WebElement element){
+    protected static void clickGesture(WebElement element) {
         driver.executeScript("mobile: clickGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) element).getId()
         ));
@@ -154,7 +157,7 @@ public class AndroidActions extends AppiumUtils{
     /**
      * mobile: flingGesture
      * This gesture performs fling gesture on the given element/area. Available since Appium v1.19
-     *
+     * <p>
      * Supported arguments
      * elementId: The id of the element to be flinged. If the element id is missing then fling bounding area must be provided. If both the element id and the fling bounding area are provided then this area is effectively ignored.
      * left: The left coordinate of the fling bounding area
@@ -165,11 +168,11 @@ public class AndroidActions extends AppiumUtils{
      * speed: The speed at which to perform this gesture in pixels per second. The value must be greater than the minimum fling velocity for the given view (50 by default). The default value is 7500 * displayDensity
      * Returned value
      * The returned value is a boolean one and equals to true if the object can still scroll in the given direction
-     *
+     * <p>
      * Usage examples
      */
 
-    protected static void flingGesture(WebElement element,String direction, int pixelsPerSec){
+    protected static void flingGesture(WebElement element, String direction, int pixelsPerSec) {
         boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: flingGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) element).getId(),
                 "direction", direction,
@@ -180,7 +183,7 @@ public class AndroidActions extends AppiumUtils{
     /**
      * mobile: pinchOpenGesture
      * This gesture performs pinch-open gesture on the given element/area. Available since Appium v1.19
-     *
+     * <p>
      * Supported arguments
      * elementId: The id of the element to be pinched. If the element id is missing then pinch bounding area must be provided. If both the element id and the pinch bounding area are provided then the area is effectively ignored.
      * left: The left coordinate of the pinch bounding area
@@ -191,7 +194,7 @@ public class AndroidActions extends AppiumUtils{
      * speed: The speed at which to perform this gesture in pixels per second. The value must not be negative. The default value is 2500 * displayDensity
      * Usage examples
      */
-    protected static void pinchOpenGesture(WebElement element, int percentage){
+    protected static void pinchOpenGesture(WebElement element, int percentage) {
         ((JavascriptExecutor) driver).executeScript("mobile: pinchOpenGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) element).getId(),
                 "percent", percentage
@@ -201,7 +204,7 @@ public class AndroidActions extends AppiumUtils{
     /**
      * mobile: pinchCloseGesture
      * This gesture performs pinch-close gesture on the given element/area. Available since Appium v1.19
-     *
+     * <p>
      * Supported arguments
      * elementId: The id of the element to be pinched. If the element id is missing then pinch bounding area must be provided. If both the element id and the pinch bounding area are provided then the area is effectively ignored.
      * left: The left coordinate of the pinch bounding area
@@ -212,7 +215,7 @@ public class AndroidActions extends AppiumUtils{
      * speed: The speed at which to perform this gesture in pixels per second. The value must not be negative. The default value is 2500 * displayDensity
      * Usage examples
      */
-    protected static void pinchCloseGesture(WebElement element,int percentage){
+    protected static void pinchCloseGesture(WebElement element, int percentage) {
         ((JavascriptExecutor) driver).executeScript("mobile: pinchCloseGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) element).getId(),
                 "percent", percentage
@@ -221,8 +224,21 @@ public class AndroidActions extends AppiumUtils{
 
     // Miscellaneous Functions
 
-    public static void rotateDevice( int x, int y, int z){
+    public static void rotateDevice(int x, int y, int z) {
         orientation = new DeviceRotation(x, y, z);
         driver.rotate(orientation);
+    }
+
+    public static void StartAndroidActivity(AndroidDriver driver, String packageName, String activityName) {
+//           appPackage -> global name for that project
+//           appActivity -> each and every functionality in the app will have one activity
+        Activity activity = new Activity(packageName, activityName);
+        driver.startActivity(activity);
+//            to know the appPackage and appActivity
+//            make sure you device is running and attached
+//            adb shell dumpsys window | grep -E 'mCurrentFocus' - MAC
+//            adb shell dumpsys window | find 'mCurrentFocus' - Windows
+//            io.appium.android.apis/io.appium.android.apis.preference.PreferenceDependencies
+//            packageName/activityName
     }
 }
