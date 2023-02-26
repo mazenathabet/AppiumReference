@@ -1,4 +1,4 @@
-package PageObjects.Views.DragAndDrop;
+package AndroidPageObjects.Views.DragAndDrop;
 
 import Utils.AndroidActions;
 import io.appium.java_client.AppiumBy;

@@ -1,8 +1,8 @@
-package PageObjects.Views;
+package AndroidPageObjects.Views;
 
-import PageObjects.Views.DragAndDrop.DragDropPage;
-import PageObjects.Views.ExpandableList.ExpandableListPage;
-import PageObjects.Views.Gallery.GalleryPage;
+import AndroidPageObjects.Views.DragAndDrop.DragDropPage;
+import AndroidPageObjects.Views.ExpandableList.ExpandableListPage;
+import AndroidPageObjects.Views.Gallery.GalleryPage;
 import Utils.AndroidActions;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;

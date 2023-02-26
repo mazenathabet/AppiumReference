@@ -1,4 +1,4 @@
-package PageObjects.Preference;
+package AndroidPageObjects.Preference;
 
 import Utils.AndroidActions;
 import io.appium.java_client.AppiumBy;

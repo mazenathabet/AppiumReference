@@ -1,6 +1,6 @@
 package AndroidTests;
 
-import PageObjects.Preference.PreferenceDependencies;
+import AndroidPageObjects.Preference.PreferenceDependencies;
 import TestUtils.FrameworkInitialization;
 import org.testng.Assert;
 import org.testng.annotations.Test;

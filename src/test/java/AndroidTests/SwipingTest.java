@@ -1,6 +1,6 @@
 package AndroidTests;
 
-import PageObjects.Views.Gallery.GalleryPage;
+import AndroidPageObjects.Views.Gallery.GalleryPage;
 import TestUtils.FrameworkInitialization;
 import org.testng.Assert;
 import org.testng.annotations.Test;

@@ -1,4 +1,4 @@
-package PageObjects.Views.Gallery;
+package AndroidPageObjects.Views.Gallery;
 
 import Utils.AndroidActions;
 import io.appium.java_client.AppiumBy;

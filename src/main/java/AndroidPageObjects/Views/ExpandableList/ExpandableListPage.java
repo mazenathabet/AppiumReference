@@ -1,4 +1,4 @@
-package PageObjects.Views.ExpandableList;
+package AndroidPageObjects.Views.ExpandableList;
 
 import Utils.AndroidActions;
 import io.appium.java_client.AppiumBy;

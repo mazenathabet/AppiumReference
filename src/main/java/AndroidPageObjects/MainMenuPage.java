@@ -1,7 +1,7 @@
-package PageObjects;
+package AndroidPageObjects;
 
-import PageObjects.Preference.PreferencePage;
-import PageObjects.Views.ViewsPage;
+import AndroidPageObjects.Preference.PreferencePage;
+import AndroidPageObjects.Views.ViewsPage;
 import Utils.AndroidActions;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;

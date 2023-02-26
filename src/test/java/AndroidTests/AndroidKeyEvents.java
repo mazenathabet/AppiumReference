@@ -1,6 +1,6 @@
 package AndroidTests;
 
-import PageObjects.Preference.PreferenceDependencies;
+import AndroidPageObjects.Preference.PreferenceDependencies;
 import TestUtils.FrameworkInitialization;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
