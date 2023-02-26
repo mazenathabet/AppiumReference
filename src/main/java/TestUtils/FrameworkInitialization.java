@@ -39,7 +39,9 @@ public class FrameworkInitialization extends AppiumUtils {
         UiAutomator2Options options = new UiAutomator2Options();
         if (platform.equalsIgnoreCase("Android")) {
             options.setDeviceName(properties.getProperty("AndroidDeviceName")); // name of the device or the emulator
-            options.setApp(System.getProperty("user.dir") + properties.getProperty("AppiumBasicsApk")); // path of the apk
+            options.setApp(System.getProperty("user.dir") + properties.getProperty("GeneralStoreApkPath")); // path of the apk
+            options.setChromedriverExecutable(System.getProperty("user.dir")+"/src/main/resources/drivers/chromedriver");
+//            options.setCapability("browserName","Chrome"); to automate web apps
             driver = new AndroidDriver(new URL("http://" + ipAddress + ":" + Integer.parseInt(properties.getProperty("port"))), options);
         } else if (platform.equalsIgnoreCase("IOS")) {
             System.out.println("IOS driver");
