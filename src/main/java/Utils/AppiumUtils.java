@@ -19,7 +19,7 @@ public class AppiumUtils {
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//data.properties");
         properties.load(fis);
         String ipAddress = System.getProperty("ipAddress") != null ? System.getProperty("ipAddress") : properties.getProperty("ipAddress");
-        service = new AppiumServiceBuilder().withAppiumJS(new File("//usr//local//lib//node_modules//appium//build//lib//main.js"))
+        service = new AppiumServiceBuilder().withAppiumJS(new File("/Users/mazenathabet/Desktop/Programs/node-v18.14.2-darwin-x64/lib/node_modules/appium/build/lib/main.js"))
                 .withIPAddress(ipAddress).usingPort(Integer.parseInt(properties.getProperty("port"))).build();
         System.out.println("Starting the Appium server on port " + properties.getProperty("port") + "... " + "\n" + df.format(new Date()) +
                 "\n----------------------------------------------------------------");
