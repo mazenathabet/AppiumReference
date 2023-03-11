@@ -6,14 +6,14 @@ import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
 
 public class WebViewPage extends IosActions {
+    By BACK_BUTTON = AppiumBy.xpath("//XCUIElementTypeButton[@name=\"UIKitCatalog\"]");
+
     public WebViewPage(IOSDriver driver) {
         super(driver);
     }
 
-    By BACK_BUTTON = AppiumBy.xpath("//XCUIElementTypeButton[@name=\"UIKitCatalog\"]");
-
-    public MainMenuPage goBackHome(){
+    public MainMenuPage goBackHome() {
         driver.findElement(BACK_BUTTON).click();
-        return new MainMenuPage(driver);
+        return new MainMenuPage((IOSDriver) driver);
     }
 }

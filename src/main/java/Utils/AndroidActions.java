@@ -13,12 +13,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class AndroidActions extends AppiumUtils {
-    protected static AndroidDriver driver;
+
     private static DeviceRotation orientation;
     protected WebDriverWait wait;
 
     public AndroidActions(AndroidDriver driver) {
-        AndroidActions.driver = driver;
+        super(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
     // https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md
@@ -26,15 +26,15 @@ public class AndroidActions extends AppiumUtils {
 
     /**
      * mobile: scrollGesture
-     * This gesture performs scroll gesture on the given element/area. Available since Appium v1.19
+     * This gesture performs scrollToWebElement gesture on the given element/area. Available since Appium v1.19
      * Supported arguments
-     * elementId: The id of the element to be scrolled. If the element id is missing then scroll bounding area must be provided. If both the element id and the scroll bounding area are provided then this area is effectively ignored.
-     * left: The left coordinate of the scroll bounding area
-     * top: The top coordinate of the scroll bounding area
-     * width: The width of the scroll bounding area
-     * height: The height of the scroll bounding area
+     * elementId: The id of the element to be scrolled. If the element id is missing then scrollToWebElement bounding area must be provided. If both the element id and the scrollToWebElement bounding area are provided then this area is effectively ignored.
+     * left: The left coordinate of the scrollToWebElement bounding area
+     * top: The top coordinate of the scrollToWebElement bounding area
+     * width: The width of the scrollToWebElement bounding area
+     * height: The height of the scrollToWebElement bounding area
      * direction: Scrolling direction. Mandatory value. Acceptable values are: up, down, left and right (case-insensitive)
-     * percent: The size of the scroll as a percentage of the scrolling area size. Valid values must be float numbers greater than zero, where 1.0 is 100%. Mandatory value.
+     * percent: The size of the scrollToWebElement as a percentage of the scrolling area size. Valid values must be float numbers greater than zero, where 1.0 is 100%. Mandatory value.
      * speed: The speed at which to perform this gesture in pixels per second. The value must not be negative. The default value is 5000 * displayDensity
      */
     protected static void scrollToTheEnd(int left, int top, int width, int height, String direction, double percentage) {
@@ -48,7 +48,7 @@ public class AndroidActions extends AppiumUtils {
         } while (canScrollMore);
     }
 
-    protected static void scrollIntoViewUsingAndroidUiAutomator(String text) {
+    protected static void scrollToText(String text) {
         driver.findElement(AppiumBy.androidUIAutomator(String.format("new UiScrollable(new UiSelector()).scrollIntoView(text(\"%s\"));", text)));
     }
 
@@ -116,7 +116,7 @@ public class AndroidActions extends AppiumUtils {
      * top: The top coordinate of the swipe bounding area
      * width: The width of the swipe bounding area
      * height: The height of the swipe bounding area
-     * direction: Swipe direction. Mandatory value. Acceptable values are: up, down, left and right (case insensitive)
+     * direction: Swipe direction. Mandatory value. Acceptable values are: up, down, left and right (case-insensitive)
      * percent: The size of the swipe as a percentage of the swipe area size. Valid values must be float numbers in range 0..1, where 1.0 is 100%. Mandatory value.
      * speed: The speed at which to perform this gesture in pixels per second. The value must not be negative. The default value is 5000 * displayDensity
      *
@@ -159,7 +159,7 @@ public class AndroidActions extends AppiumUtils {
      * This gesture performs fling gesture on the given element/area. Available since Appium v1.19
      * <p>
      * Supported arguments
-     * elementId: The id of the element to be flinged. If the element id is missing then fling bounding area must be provided. If both the element id and the fling bounding area are provided then this area is effectively ignored.
+     * elementId: The id of the element to be flung. If the element id is missing then fling bounding area must be provided. If both the element id and the fling bounding area are provided then this area is effectively ignored.
      * left: The left coordinate of the fling bounding area
      * top: The top coordinate of the fling bounding area
      * width: The width of the fling bounding area
@@ -167,7 +167,7 @@ public class AndroidActions extends AppiumUtils {
      * direction: Direction of the fling. Mandatory value. Acceptable values are: up, down, left and right (case-insensitive)
      * speed: The speed at which to perform this gesture in pixels per second. The value must be greater than the minimum fling velocity for the given view (50 by default). The default value is 7500 * displayDensity
      * Returned value
-     * The returned value is a boolean one and equals to true if the object can still scroll in the given direction
+     * The returned value is a boolean one and equals to true if the object can still scrollToWebElement in the given direction
      * <p>
      * Usage examples
      */
@@ -224,10 +224,10 @@ public class AndroidActions extends AppiumUtils {
 
     // Miscellaneous Functions
 
-    public static void rotateDevice(int x, int y, int z) {
-        orientation = new DeviceRotation(x, y, z);
-        driver.rotate(orientation);
-    }
+//    public static void rotateDevice(int x, int y, int z) {
+//        orientation = new DeviceRotation(x, y, z);
+//        driver.rotate(orientation);
+//    }
 
     public static void StartAndroidActivity(AndroidDriver driver, String packageName, String activityName) {
 //           appPackage -> global name for that project

@@ -7,14 +7,18 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
+
 public class MainMenuPage extends AndroidActions {
+
     /**
      * AppiumBy -> exclusively for appium
      * By. -> generic locators
      */
-    By Animation = AppiumBy.accessibilityId("Animation");
-    By Preference = AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Preference\"]");
-    By Views = AppiumBy.accessibilityId("Views");
+
+    private final By Animation = AppiumBy.accessibilityId("Animation");
+    private final By Preference = AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Preference\"]");
+    private final By Views = AppiumBy.accessibilityId("Views");
+
     public MainMenuPage(AndroidDriver driver) {
         super(driver);
     }
@@ -25,12 +29,12 @@ public class MainMenuPage extends AndroidActions {
 
     public PreferencePage clickPreference() {
         driver.findElement(Preference).click();
-        return new PreferencePage(driver);
+        return new PreferencePage((AndroidDriver) driver);
     }
 
     public ViewsPage clickViews() {
         driver.findElement(Views).click();
-        return new ViewsPage(driver);
+        return new ViewsPage((AndroidDriver) driver);
     }
 
 }

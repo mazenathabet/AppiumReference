@@ -11,6 +11,7 @@ public class PreferenceDependencies extends AndroidActions {
     By WIFI_NAME = AppiumBy.id("android:id/edit");
     By BUTTONS = AppiumBy.className("android.widget.Button");
     By ALERT_TITLE = AppiumBy.id("android:id/alertTitle");
+
     public PreferenceDependencies(AndroidDriver driver) {
         super(driver);
     }

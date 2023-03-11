@@ -1,5 +1,6 @@
 package AndroidTests;
 
+import AndroidPageObjects.MainMenuPage;
 import AndroidPageObjects.Views.Gallery.GalleryPage;
 import TestUtils.FrameworkInitialization;
 import org.testng.Assert;
@@ -9,6 +10,7 @@ public class SwipingTest extends FrameworkInitialization {
 
     @Test
     public void swipeImages() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
         Assert.assertTrue(mainMenuPage
                         .clickViews()
                         .clickGallery()

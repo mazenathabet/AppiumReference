@@ -12,17 +12,18 @@ public class ViewsPage extends AndroidActions {
     By EXPANDABLE_LIST = AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Expandable Lists\"]");
     By GALLERY = AppiumBy.accessibilityId("Gallery");
     By DRAG_DROP = AppiumBy.accessibilityId("Drag and Drop");
+
     public ViewsPage(AndroidDriver driver) {
         super(driver);
     }
 
     public ExpandableListPage clickExpandableList() {
         driver.findElement(EXPANDABLE_LIST).click();
-        return new ExpandableListPage(driver);
+        return new ExpandableListPage((AndroidDriver) driver);
     }
 
     public ViewsPage scrollToWebView3() {
-        AndroidActions.scrollIntoViewUsingAndroidUiAutomator("WebView3");
+        AndroidActions.scrollToText("WebView3");
         return this;
     }
 
@@ -33,11 +34,11 @@ public class ViewsPage extends AndroidActions {
 
     public GalleryPage clickGallery() {
         driver.findElement(GALLERY).click();
-        return new GalleryPage(driver);
+        return new GalleryPage((AndroidDriver) driver);
     }
 
     public DragDropPage clickDragDrop() {
         driver.findElement(DRAG_DROP).click();
-        return new DragDropPage(driver);
+        return new DragDropPage((AndroidDriver) driver);
     }
 }

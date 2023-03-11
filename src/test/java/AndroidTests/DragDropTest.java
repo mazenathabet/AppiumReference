@@ -13,6 +13,8 @@ public class DragDropTest extends FrameworkInitialization {
                 .clickDragDrop()
                 .dragAndDropSource()
                 .getResultText();
-        Assert.assertEquals(actualResultText, "Dropped!", "Result Text is not correct ");
+        Assert.assertEquals(actualResultText,
+                "Dropped!",
+                "Result Text is not correct ");
     }
 }

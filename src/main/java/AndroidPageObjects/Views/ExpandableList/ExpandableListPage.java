@@ -9,6 +9,7 @@ public class ExpandableListPage extends AndroidActions {
     By CUSTOM_ADAPTER = AppiumBy.accessibilityId("1. Custom Adapter");
     By PEOPLE_NAMES = AppiumBy.className("android.widget.TextView");
     By MENU_TITLE = AppiumBy.id("android:id/title");
+
     public ExpandableListPage(AndroidDriver driver) {
         super(driver);
     }

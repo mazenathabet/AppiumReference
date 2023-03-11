@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 public class DragDropPage extends AndroidActions {
     By SOURCE = AppiumBy.id("io.appium.android.apis:id/drag_dot_1");
     By RESULT_TEXT = AppiumBy.id("io.appium.android.apis:id/drag_result_text");
+
     public DragDropPage(AndroidDriver driver) {
         super(driver);
     }

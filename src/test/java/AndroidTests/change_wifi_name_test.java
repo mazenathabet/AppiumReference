@@ -1,5 +1,6 @@
 package AndroidTests;
 
+import AndroidPageObjects.MainMenuPage;
 import AndroidPageObjects.Preference.PreferenceDependencies;
 import TestUtils.FrameworkInitialization;
 import org.testng.Assert;
@@ -9,6 +10,7 @@ public class change_wifi_name_test extends FrameworkInitialization {
 
     @Test
     public void appium_test() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
         String actualTitle = mainMenuPage.clickPreference()
                 .clickPreferenceDependencies()
                 .enableWifi()

@@ -14,6 +14,6 @@ public class PreferencePage extends AndroidActions {
 
     public PreferenceDependencies clickPreferenceDependencies() {
         driver.findElement(PreferenceDependencies).click();
-        return new PreferenceDependencies(driver);
+        return new PreferenceDependencies((AndroidDriver) driver);
     }
 }

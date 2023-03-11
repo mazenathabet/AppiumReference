@@ -8,31 +8,32 @@ import org.openqa.selenium.By;
 
 public class MainMenuPage extends IosActions {
 
-    public MainMenuPage(IOSDriver driver) {
-        super(driver);
-    }
-
     By ALERT_VIEWS = AppiumBy.accessibilityId("Alert Views");
     By STEPPERS = AppiumBy.accessibilityId("Steppers");
     By WEB_VIEW = AppiumBy.accessibilityId("Web View");
     By PICKER_VIEW = AppiumBy.accessibilityId("Picker View");
-    public AlertViewsPage clickAlertViews(){
+    public MainMenuPage(IOSDriver driver) {
+        super(driver);
+    }
+
+    public AlertViewsPage clickAlertViews() {
         driver.findElement(ALERT_VIEWS).click();
-        return new AlertViewsPage(driver);
+        return new AlertViewsPage((IOSDriver) driver);
     }
-    public SteppersPage clickSteppers(){
+
+    public SteppersPage clickSteppers() {
         driver.findElement(STEPPERS).click();
-        return new SteppersPage(driver);
+        return new SteppersPage((IOSDriver) driver);
     }
 
-    public WebViewPage clickWebViewAndGoBack(){
-        IosActions.scroll(driver.findElement(WEB_VIEW),"down");
+    public WebViewPage clickWebViewAndGoBack() {
+        IosActions.scrollToWebElement(driver.findElement(WEB_VIEW), "down");
         driver.findElement(WEB_VIEW).click();
-        return new WebViewPage(driver);
+        return new WebViewPage((IOSDriver) driver);
     }
 
-    public PickerViewPage clickPickerView(){
+    public PickerViewPage clickPickerView() {
         driver.findElement(PICKER_VIEW).click();
-        return new PickerViewPage(driver);
+        return new PickerViewPage((IOSDriver) driver);
     }
 }

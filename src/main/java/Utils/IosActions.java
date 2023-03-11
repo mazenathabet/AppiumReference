@@ -9,43 +9,43 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IosActions extends AppiumUtils{
+public class IosActions extends AppiumUtils {
 
-    protected static IOSDriver driver;
     protected WebDriverWait wait;
 
     public IosActions(IOSDriver driver) {
-        IosActions.driver = driver;
+        super(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public static void longPress(WebElement element, int millisecondsToHold){
+    public static void longPress(WebElement element, int millisecondsToHold) {
 //        ((JavascriptExecutor) driver).executeScript("mobile:touchAndHold",
 //                ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(),
 //                "duration", millisecondsToHold
 //        ));
-        Map<String,Object> params = new HashMap<>();
-        params.put("elementId",((RemoteWebElement) element).getId());
-        params.put("duration",millisecondsToHold);
+        Map<String, Object> params = new HashMap<>();
+        params.put("elementId", ((RemoteWebElement) element).getId());
+        params.put("duration", millisecondsToHold);
         driver.executeScript("mobile:touchAndHold", params);
     }
 
-    public static void scroll(WebElement element,String direction){
-        Map<String,Object> params = new HashMap<>();
-        params.put("elementId",((RemoteWebElement) element).getId()); // mandatory
-        params.put("direction",direction); // mandatory down-up
-        driver.executeScript("mobile: scroll",params);
+    public static void scrollToWebElement(WebElement element, String direction) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("elementId", ((RemoteWebElement) element).getId()); // mandatory
+        params.put("direction", direction); // mandatory down-up
+        driver.executeScript("mobile: scrollToWebElement", params);
     }
 
-    public static void swipe(String direction){
-        Map<String,Object> params = new HashMap<>();
-        params.put("direction",direction); // mandatory right, left
+    public static void swipe(String direction) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("direction", direction); // mandatory right, left
         // by default appium swipes to the center of the screen so the target element is not mandatory
-        driver.executeScript("mobile:swipe",params);
+        driver.executeScript("mobile:swipe", params);
     }
-    public static void lunchApp(String bundleId){
-        Map<String, String > params = new HashMap<String, String>();
-        params.put("bundleId",bundleId);
-        driver.executeScript("mobile:launchApp",params);
+
+    public static void lunchApp(String bundleId) {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("bundleId", bundleId);
+        driver.executeScript("mobile:launchApp", params);
     }
 }

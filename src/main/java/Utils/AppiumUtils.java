@@ -1,5 +1,6 @@
 package Utils;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
@@ -11,8 +12,13 @@ import java.util.Date;
 import java.util.Properties;
 
 public class AppiumUtils {
+    protected static AppiumDriver driver;
     static SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private static AppiumDriverLocalService service;
+
+    public AppiumUtils(AppiumDriver driver) {
+        this.driver = driver;
+    }
 
     public static void startAppiumServer() throws IOException {
         Properties properties = new Properties();
