@@ -26,16 +26,20 @@ public class FrameworkInitialization {
     protected TestAppPage testAppPage;
     protected IOSPageObjects.MainMenuPage mainMenuPage1;
     protected MainMenuPage mainMenuPage;
-
+    Properties properties = new Properties();
 
     @BeforeSuite(alwaysRun = true)
     public void startServer() throws IOException {
-        AppiumUtils.startAppiumServer();
+        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//data.properties");
+        properties.load(fis);
+        String ipAddress = System.getProperty("ipAddress") != null ? System.getProperty("ipAddress") : properties.getProperty("ipAddress");
+        int port = System.getProperty("port") != null ? Integer.parseInt(System.getProperty("port")) : Integer.parseInt(properties.getProperty("port"));
+
+        AppiumUtils.startAppiumServer(ipAddress,port);
     }
 
     @BeforeMethod(alwaysRun = true)
     public void startDriver() throws IOException {
-        Properties properties = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//data.properties");
         properties.load(fis);
         String platform = properties.getProperty("Platform");
