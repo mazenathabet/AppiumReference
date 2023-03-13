@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Android Test Suite">
+    <test name="End to end Framework Android Tests">
+        <classes>
+            <class name="AndroidTests.AndroidKeyEvents">
+            </class>
+            <class name="AndroidTests.ClipboardTest">
+            </class>
+            <class name="AndroidTests.DragDropTest">
+            </class>
+            <class name="AndroidTests.HybridAppHandlingTest">
+                <methods>
+                    <exclude name="handleHybridApp"></exclude>
+                </methods>
+            </class>
+            <class name="AndroidTests.LongPressTests">
+            </class>
+            <class name="AndroidTests.RotateTest">
+            </class>
+            <class name="AndroidTests.ScrollingTests">
+            </class>
+            <class name="AndroidTests.SwipingTest">
+            </class>
+            <class name="AndroidTests.appPackageActivityTest">
+            </class>
+            <class name="AndroidTests.change_wifi_name_test">
+            </class>
+        </classes>
+    </test>
+</suite>

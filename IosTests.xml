@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IOS Test Suite">
+    <test name="End to end Framework IOS Tests">
+        <classes>
+            <class name="IosTests.AlertsViewsTests">
+            </class>
+            <class name="IosTests.AutomatingExistingAppWithBundleID">
+            </class>
+            <class name="IosTests.LongPressTest">
+            </class>
+            <class name="IosTests.PickerHandlingTest">
+            </class>
+            <class name="IosTests.ScrollingTest">
+            </class>
+            <class name="IosTests.SlidingTest">
+            </class>
+        </classes>
+    </test>
+</suite>
