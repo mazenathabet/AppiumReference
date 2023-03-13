@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class ScrollingTest extends FrameworkInitialization {
 
     @Test
-    public void scrollThePage(){
+    public void scrollThePage() {
         mainMenuPage1.clickWebViewAndGoBack()
                 .goBackHome();
     }

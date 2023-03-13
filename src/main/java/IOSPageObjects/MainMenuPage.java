@@ -12,6 +12,7 @@ public class MainMenuPage extends IosActions {
     By STEPPERS = AppiumBy.accessibilityId("Steppers");
     By WEB_VIEW = AppiumBy.accessibilityId("Web View");
     By PICKER_VIEW = AppiumBy.accessibilityId("Picker View");
+
     public MainMenuPage(IOSDriver driver) {
         super(driver);
     }

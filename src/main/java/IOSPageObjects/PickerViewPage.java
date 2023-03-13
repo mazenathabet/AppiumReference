@@ -9,6 +9,7 @@ public class PickerViewPage extends IosActions {
     By RED_COLOR_LIST = AppiumBy.accessibilityId("Red color component value");
     By GREEN_COLOR_LIST = AppiumBy.accessibilityId("Green color component value");
     By BLUE_COLOR_LIST = AppiumBy.accessibilityId("Blue color component value");
+
     public PickerViewPage(IOSDriver driver) {
         super(driver);
     }

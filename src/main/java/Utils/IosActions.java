@@ -11,10 +11,11 @@ import java.util.Map;
 
 public class IosActions extends AppiumUtils {
 
+    public static IOSDriver driver;
     protected WebDriverWait wait;
 
     public IosActions(IOSDriver driver) {
-        super(driver);
+        IosActions.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 

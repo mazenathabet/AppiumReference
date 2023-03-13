@@ -14,11 +14,12 @@ import java.time.Duration;
 
 public class AndroidActions extends AppiumUtils {
 
+    public static AndroidDriver driver;
     private static DeviceRotation orientation;
     protected WebDriverWait wait;
 
     public AndroidActions(AndroidDriver driver) {
-        super(driver);
+        AndroidActions.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
     // https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md

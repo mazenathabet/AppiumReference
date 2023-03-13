@@ -19,6 +19,7 @@ public class AlertViewsPage extends IosActions {
     */
     By CONFIRM_BUTTON = AppiumBy.iOSNsPredicateString("label == 'Confirm'");
     By CONFIRMATION_ALERT_MESSAGE = AppiumBy.iOSNsPredicateString("label BEGINSWITH 'A message'");
+
     public AlertViewsPage(IOSDriver driver) {
         super(driver);
     }
