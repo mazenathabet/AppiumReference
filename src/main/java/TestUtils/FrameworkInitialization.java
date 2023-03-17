@@ -26,7 +26,7 @@ public class FrameworkInitialization {
     protected TestAppPage testAppPage;
     protected IOSPageObjects.MainMenuPage mainMenuPage1;
     protected MainMenuPage mainMenuPage;
-    Properties properties = new Properties();
+    private final Properties properties = new Properties();
 
     @BeforeSuite(alwaysRun = true)
     public void startServer() throws IOException {

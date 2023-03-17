@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Android Test Suite">
+
+    <listeners>
+        <listener class-name="Utils.AndroidListeners"/>  <!-- the directory of the listeners class in the project-->
+    </listeners>
+
     <test name="End to end Framework Android Tests">
         <classes>
             <class name="AndroidTests.AndroidKeyEvents">
@@ -10,9 +15,6 @@
             <class name="AndroidTests.DragDropTest">
             </class>
             <class name="AndroidTests.HybridAppHandlingTest">
-                <methods>
-                    <exclude name="handleHybridApp"></exclude>
-                </methods>
             </class>
             <class name="AndroidTests.LongPressTests">
             </class>
@@ -25,6 +27,8 @@
             <class name="AndroidTests.appPackageActivityTest">
             </class>
             <class name="AndroidTests.change_wifi_name_test">
+            </class>
+            <class name="Utils.DataProviderClass">
             </class>
         </classes>
     </test>

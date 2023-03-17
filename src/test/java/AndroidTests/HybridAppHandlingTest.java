@@ -1,6 +1,7 @@
 package AndroidTests;
 
 import TestUtils.FrameworkInitialization;
+import Utils.ExtentReportNG;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
@@ -15,6 +16,7 @@ public class HybridAppHandlingTest extends FrameworkInitialization {
 
     @Test
     public void handleHybridApp() {
+        ExtentReportNG.getReporterObject().createTest("handleHybridApp");
         driver.findElement(AppiumBy.id("nameField")).click();
         driver.hideKeyboard();
         driver.findElement(AppiumBy.id("nameField")).sendKeys("Mazen Ahmed");

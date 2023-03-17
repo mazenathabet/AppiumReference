@@ -53,9 +53,7 @@ public class AlertViewsPage extends IosActions {
         return driver.findElement(CONFIRMATION_ALERT_MESSAGE).getText();
     }
 
-    public AlertViewsPage clickConfirm() {
+    public void clickConfirm() {
         driver.findElement(CONFIRM_BUTTON).click();
-        return this;
     }
-
 }

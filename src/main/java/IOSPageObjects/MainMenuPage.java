@@ -19,22 +19,22 @@ public class MainMenuPage extends IosActions {
 
     public AlertViewsPage clickAlertViews() {
         driver.findElement(ALERT_VIEWS).click();
-        return new AlertViewsPage((IOSDriver) driver);
+        return new AlertViewsPage(driver);
     }
 
     public SteppersPage clickSteppers() {
         driver.findElement(STEPPERS).click();
-        return new SteppersPage((IOSDriver) driver);
+        return new SteppersPage(driver);
     }
 
     public WebViewPage clickWebViewAndGoBack() {
         IosActions.scrollToWebElement(driver.findElement(WEB_VIEW), "down");
         driver.findElement(WEB_VIEW).click();
-        return new WebViewPage((IOSDriver) driver);
+        return new WebViewPage(driver);
     }
 
     public PickerViewPage clickPickerView() {
         driver.findElement(PICKER_VIEW).click();
-        return new PickerViewPage((IOSDriver) driver);
+        return new PickerViewPage(driver);
     }
 }

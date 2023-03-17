@@ -19,7 +19,7 @@ public class ViewsPage extends AndroidActions {
 
     public ExpandableListPage clickExpandableList() {
         driver.findElement(EXPANDABLE_LIST).click();
-        return new ExpandableListPage((AndroidDriver) driver);
+        return new ExpandableListPage(driver);
     }
 
     public ViewsPage scrollToWebView3() {
@@ -34,11 +34,11 @@ public class ViewsPage extends AndroidActions {
 
     public GalleryPage clickGallery() {
         driver.findElement(GALLERY).click();
-        return new GalleryPage((AndroidDriver) driver);
+        return new GalleryPage(driver);
     }
 
     public DragDropPage clickDragDrop() {
         driver.findElement(DRAG_DROP).click();
-        return new DragDropPage((AndroidDriver) driver);
+        return new DragDropPage(driver);
     }
 }

@@ -14,6 +14,6 @@ public class WebViewPage extends IosActions {
 
     public MainMenuPage goBackHome() {
         driver.findElement(BACK_BUTTON).click();
-        return new MainMenuPage((IOSDriver) driver);
+        return new MainMenuPage(driver);
     }
 }

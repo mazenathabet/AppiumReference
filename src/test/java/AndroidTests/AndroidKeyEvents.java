@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class AndroidKeyEvents extends FrameworkInitialization {
     @Test
-    public void clipboardTest() {
+    public void AndroidKeyEventsTest() {
         MainMenuPage mainMenuPage = new MainMenuPage(driver);
         mainMenuPage.clickPreference()
                 .clickPreferenceDependencies()

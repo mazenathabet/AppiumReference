@@ -1,5 +1,6 @@
 package Utils;
 
+import TestUtils.FrameworkInitialization;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -7,7 +8,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-public class DataProviderClass {
+public class DataProviderClass extends FrameworkInitialization {
 
 
     @Test(dataProvider = "getData")

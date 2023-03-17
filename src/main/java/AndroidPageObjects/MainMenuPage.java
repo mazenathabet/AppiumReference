@@ -29,12 +29,12 @@ public class MainMenuPage extends AndroidActions {
 
     public PreferencePage clickPreference() {
         driver.findElement(Preference).click();
-        return new PreferencePage((AndroidDriver) driver);
+        return new PreferencePage(driver);
     }
 
     public ViewsPage clickViews() {
         driver.findElement(Views).click();
-        return new ViewsPage((AndroidDriver) driver);
+        return new ViewsPage(driver);
     }
 
 }

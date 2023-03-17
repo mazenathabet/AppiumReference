@@ -34,7 +34,7 @@ public class IosActions extends AppiumUtils {
         Map<String, Object> params = new HashMap<>();
         params.put("elementId", ((RemoteWebElement) element).getId()); // mandatory
         params.put("direction", direction); // mandatory down-up
-        driver.executeScript("mobile: scrollToWebElement", params);
+        driver.executeScript("mobile:scrollToElement", params);
     }
 
     public static void swipe(String direction) {

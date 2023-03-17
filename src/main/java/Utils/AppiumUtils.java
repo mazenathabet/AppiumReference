@@ -2,9 +2,11 @@ package Utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +22,7 @@ public class AppiumUtils {
     private static AppiumDriverLocalService service;
 
     public static void startAppiumServer(String ipAddress, int port) {
-        service = new AppiumServiceBuilder().withAppiumJS(new File("/Users/mazenathabet/Desktop/Programs/node-v18.14.2-darwin-x64/lib/node_modules/appium/build/lib/main.js"))
+        service = new AppiumServiceBuilder().withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
                 .withIPAddress(ipAddress).usingPort(port).build();
         System.out.println("Starting the Appium server on port " + port + "... " + "\n" + df.format(new Date()) +
                 "\n----------------------------------------------------------------");
@@ -50,5 +52,11 @@ public class AppiumUtils {
         return data;
     }
 
+    public static String getScreenshotPath(String testcaseName, AppiumDriver driver) throws IOException {
+        File source = driver.getScreenshotAs(OutputType.FILE);
+        String destinationFile = System.getProperty("user.dir")+"//Reports//"+testcaseName+".png";
+        FileUtils.copyFile(source, new File(destinationFile));
+        return destinationFile;
+    }
 }
 
