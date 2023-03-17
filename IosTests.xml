@@ -3,8 +3,10 @@
 <suite name="IOS Test Suite">
 
     <listeners>
-        <listener class-name="Utils.IosListeners"/>  <!-- the directory of the listeners class in the project-->
+        <listener class-name="Utils.Listeners"/>  <!-- the directory of the listeners class in the project-->
     </listeners>
+
+    <parameter name="platform" value="Ios"></parameter>
 
     <test name="End to end Framework IOS Tests">
         <classes>

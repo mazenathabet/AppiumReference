@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Android Test Suite">
+<suite name="Appium Tes Suite">
     <listeners>
         <listener class-name="Utils.Listeners"/>  <!-- the directory of the listeners class in the project-->
     </listeners>
-    <parameter name="platform" value="Android"></parameter>
+
     <test name="End to end Framework Android Tests">
+        <parameter name="platform" value="Android"></parameter>
+        <parameter name="appPath" value="/src/main/resources/Apps/ApiDemos-debug.apk"></parameter>
         <classes>
             <class name="AndroidTests.AndroidKeyEvents">
             </class>
@@ -28,6 +30,31 @@
             </class>
             <class name="AndroidTests.change_wifi_name_test">
             </class>
+        </classes>
+    </test>
+    <test name="End to end Framework IOS Tests">
+        <parameter name="platform" value="IOS"></parameter>
+        <parameter name="appPath" value="/src/main/resources/Apps/UIKitCatalog.app"></parameter>
+        <classes>
+            <class name="IosTests.AlertsViewsTests">
+            </class>
+            <class name="IosTests.AutomatingExistingAppWithBundleID">
+            </class>
+            <class name="IosTests.LongPressTest">
+                <methods>
+                    <exclude name="testLongPress"></exclude>
+                </methods>
+            </class>
+            <class name="IosTests.PickerHandlingTest">
+            </class>
+            <class name="IosTests.ScrollingTest">
+            </class>
+            <class name="IosTests.SlidingTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Data provider Tests">
+        <classes>
             <class name="Utils.DataProviderClass">
             </class>
         </classes>

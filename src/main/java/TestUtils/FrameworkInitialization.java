@@ -6,10 +6,7 @@ import Utils.AppiumUtils;
 import Utils.DriverContext;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -39,16 +36,15 @@ public class FrameworkInitialization {
     }
 
     @BeforeMethod(alwaysRun = true)
-    public void startDriver() throws IOException {
+    @Parameters({"platform","appPath"})
+    public void startDriver(@Optional String platform, @Optional String appPath) throws IOException {
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//data.properties");
         properties.load(fis);
-        String platform = properties.getProperty("Platform");
-
         if (platform.equalsIgnoreCase("Android")) {
-            driver = DriverContext.getAndroidDriver();
+            driver = DriverContext.getAndroidDriver(appPath);
             mainMenuPage = new MainMenuPage(driver);
         } else if (platform.equalsIgnoreCase("IOS")) {
-            iosDriver = DriverContext.getIosDriver();
+            iosDriver = DriverContext.getIosDriver(appPath);
             mainMenuPage1 = new IOSPageObjects.MainMenuPage(iosDriver);
             testAppPage = new TestAppPage(iosDriver);
 //            IosActions.lunchApp("com.apple.mobileslideshow");

@@ -2,6 +2,7 @@ package Utils;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -9,7 +10,7 @@ import org.testng.ITestResult;
 
 import static Utils.AppiumUtils.getScreenshotPath;
 
-public class AndroidListeners implements ITestListener {
+public class Listeners implements ITestListener {
 
     ExtentReports extentReports = ExtentReportNG.getReporterObject();
     ExtentTest test;
@@ -22,7 +23,7 @@ public class AndroidListeners implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-//        test.log(Status.PASS, "Test Passed!");
+        test.log(Status.PASS, "Test Passed!");
     }
 
     @Override
@@ -39,12 +40,12 @@ public class AndroidListeners implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
-//        ITestListener.super.onTestSkipped(result);
+        ITestListener.super.onTestSkipped(result);
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-//        ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
+        ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
     }
 
     @Override
@@ -54,7 +55,7 @@ public class AndroidListeners implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-//        ITestListener.super.onStart(context);
+        ITestListener.super.onStart(context);
     }
 
     @Override

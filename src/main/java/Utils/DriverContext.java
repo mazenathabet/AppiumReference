@@ -14,14 +14,15 @@ import java.util.Properties;
 public class DriverContext {
 
 
-    public static AndroidDriver getAndroidDriver() throws IOException {
+
+    public static AndroidDriver getAndroidDriver(String appPath) throws IOException {
         Properties properties = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//data.properties");
         properties.load(fis);
         String ipAddress = System.getProperty("ipAddress") != null ? System.getProperty("ipAddress") : properties.getProperty("ipAddress");
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName(properties.getProperty("AndroidDeviceName")); // name of the device or the emulator
-        options.setApp(System.getProperty("user.dir") + properties.getProperty("AppiumBasicsApk")); // path of the apk
+        options.setApp(System.getProperty("user.dir") + appPath); // path of the apk
         options.setChromedriverExecutable(System.getProperty("user.dir") + "/src/main/resources/drivers/chromedriver");
 //            options.setCapability("browserName","Chrome"); to automate web apps
         AndroidDriver driver = new AndroidDriver(new URL("http://" + ipAddress + ":" + Integer.parseInt(properties.getProperty("port"))), options);
@@ -29,7 +30,7 @@ public class DriverContext {
         return driver;
     }
 
-    public static IOSDriver getIosDriver() throws IOException {
+    public static IOSDriver getIosDriver(String appPath) throws IOException {
         Properties properties = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//data.properties");
         properties.load(fis);
@@ -37,13 +38,13 @@ public class DriverContext {
         XCUITestOptions options = new XCUITestOptions();
         options.setDeviceName(properties.getProperty("IosDeviceName"));
 //            options.setApp(System.getProperty("user.dir") + properties.getProperty("TestApp"));
-        options.setApp(System.getProperty("user.dir") + properties.getProperty("UIKitCatalogApp"));
+        options.setApp(System.getProperty("user.dir") + appPath);
         options.setPlatformVersion("16.2");
         // Appium will install WebDriverAgent in the Apple device so this WebDriverAgent will help to automate in IOS apps
         options.setWdaLaunchTimeout(Duration.ofSeconds(20));
         IOSDriver driver = new IOSDriver(new URL("http://" + ipAddress + ":" + Integer.parseInt(properties.getProperty("port"))), options);
         //https://support.apple.com/en-eg/guide/deployment/depece748c41/web for all the bundleId
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         return driver;
     }
 }
