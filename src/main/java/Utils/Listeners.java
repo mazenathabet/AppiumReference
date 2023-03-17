@@ -23,7 +23,7 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        test.log(Status.PASS, "Test Passed!");
+        test.log(Status.PASS, "Test case " + result.getName() + " has Passed!!");
     }
 
     @Override
@@ -35,11 +35,12 @@ public class Listeners implements ITestListener {
             e.printStackTrace();
         }
         try {
-            test.addScreenCaptureFromPath(getScreenshotPath(result.getMethod().getMethodName(), driver),
+            test.addScreenCaptureFromPath(getScreenshotPath(result.getName(), driver),
                     result.getMethod().getMethodName());
         } catch (Exception e) {
             e.printStackTrace();
         }
+        test.log(Status.FAIL,"Test case "+result.getName() +" has Failed !!");
     }
 
     @Override

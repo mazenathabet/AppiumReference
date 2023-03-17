@@ -7,6 +7,7 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,8 +54,8 @@ public class AppiumUtils {
     }
 
     public static String getScreenshotPath(String testcaseName, AppiumDriver driver) throws IOException {
-        File source = driver.getScreenshotAs(OutputType.FILE);
-        String destinationFile = System.getProperty("user.dir") + "//reports//" + testcaseName + ".png";
+        File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        String destinationFile = System.getProperty("user.dir") + "//reports//screenshots" + testcaseName + ".png";
         FileUtils.copyFile(source, new File(destinationFile));
         return destinationFile;
     }
