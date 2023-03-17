@@ -14,7 +14,6 @@ import java.util.Properties;
 public class DriverContext {
 
 
-
     public static AndroidDriver getAndroidDriver(String appPath) throws IOException {
         Properties properties = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//data.properties");

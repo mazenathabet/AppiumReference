@@ -29,11 +29,15 @@ public class Listeners implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         test.fail(result.getThrowable());
-        try {driver = (AppiumDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());}
-        catch (Exception e) {e.printStackTrace();}
-        try {test.addScreenCaptureFromPath(getScreenshotPath(result.getMethod().getMethodName(),driver),
-                result.getMethod().getMethodName());}
-        catch (Exception e) {
+        try {
+            driver = (AppiumDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            test.addScreenCaptureFromPath(getScreenshotPath(result.getMethod().getMethodName(), driver),
+                    result.getMethod().getMethodName());
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

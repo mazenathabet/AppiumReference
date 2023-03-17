@@ -5,7 +5,10 @@
     <listeners>
         <listener class-name="Utils.Listeners"/>  <!-- the directory of the listeners class in the project-->
     </listeners>
+
     <parameter name="platform" value="Android"></parameter>
+    <parameter name="appPath" value="/src/main/resources/Apps/ApiDemos-debug.apk"></parameter>
+
     <test name="End to end Framework Android Tests">
         <classes>
             <class name="AndroidTests.AndroidKeyEvents">

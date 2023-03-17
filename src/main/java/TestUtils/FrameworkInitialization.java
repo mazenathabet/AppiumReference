@@ -18,12 +18,12 @@ public class FrameworkInitialization {
 
 
     static SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private final Properties properties = new Properties();
     protected AndroidDriver driver;
     protected IOSDriver iosDriver;
     protected TestAppPage testAppPage;
     protected IOSPageObjects.MainMenuPage mainMenuPage1;
     protected MainMenuPage mainMenuPage;
-    private final Properties properties = new Properties();
 
     @BeforeSuite(alwaysRun = true)
     public void startServer() throws IOException {
@@ -32,11 +32,11 @@ public class FrameworkInitialization {
         String ipAddress = System.getProperty("ipAddress") != null ? System.getProperty("ipAddress") : properties.getProperty("ipAddress");
         int port = System.getProperty("port") != null ? Integer.parseInt(System.getProperty("port")) : Integer.parseInt(properties.getProperty("port"));
 
-        AppiumUtils.startAppiumServer(ipAddress,port);
+        AppiumUtils.startAppiumServer(ipAddress, port);
     }
 
     @BeforeMethod(alwaysRun = true)
-    @Parameters({"platform","appPath"})
+    @Parameters({"platform", "appPath"})
     public void startDriver(@Optional String platform, @Optional String appPath) throws IOException {
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//data.properties");
         properties.load(fis);

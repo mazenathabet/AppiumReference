@@ -6,7 +6,8 @@
         <listener class-name="Utils.Listeners"/>  <!-- the directory of the listeners class in the project-->
     </listeners>
 
-    <parameter name="platform" value="Ios"></parameter>
+    <parameter name="platform" value="IOS"></parameter>
+    <parameter name="appPath" value="/src/main/resources/Apps/UIKitCatalog.app"></parameter>
 
     <test name="End to end Framework IOS Tests">
         <classes>
