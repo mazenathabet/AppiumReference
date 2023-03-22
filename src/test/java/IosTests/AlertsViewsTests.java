@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 public class AlertsViewsTests extends FrameworkInitialization {
 
+    //    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Test
     public void changeTextEntryAlert() {
         String actualConfirmationMessage = mainMenuPage1

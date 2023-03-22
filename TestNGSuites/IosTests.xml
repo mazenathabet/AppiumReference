@@ -4,6 +4,7 @@
 
     <listeners>
         <listener class-name="Utils.Listeners"/>  <!-- the directory of the listeners class in the project-->
+        <listener class-name="Utils.MyTransformer"/> <!-- to implement RetryAnalyzer on Run time  -->
     </listeners>
 
     <parameter name="platform" value="IOS"></parameter>

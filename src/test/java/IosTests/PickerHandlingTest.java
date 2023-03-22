@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 public class PickerHandlingTest extends FrameworkInitialization {
 
+    //    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Test
     public void handlePickerView() {
         String blueNumber = mainMenuPage1.clickPickerView()

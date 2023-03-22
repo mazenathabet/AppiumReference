@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 public class SlidingTest extends FrameworkInitialization {
 
+    //    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Test
     public void handlingSliding() {
         String actualPercentage = testAppPage.handleSlider("0")

@@ -12,6 +12,7 @@ import java.util.List;
 public class AutomatingExistingAppWithBundleID extends FrameworkInitialization {
 
 
+    //    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Test
     public void swipePhotos() {
         iosDriver.findElement(AppiumBy.iOSNsPredicateString("label == 'All Photos'")).click();
