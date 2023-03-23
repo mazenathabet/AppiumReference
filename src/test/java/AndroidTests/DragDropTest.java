@@ -1,10 +1,10 @@
 package AndroidTests;
 
-import TestUtils.FrameworkInitialization;
+import TestUtils.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class DragDropTest extends FrameworkInitialization {
+public class DragDropTest extends TestBase {
 
     @Test
     public void DragDropDemo() {

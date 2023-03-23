@@ -2,10 +2,10 @@ package AndroidTests;
 
 import AndroidPageObjects.MainMenuPage;
 import AndroidPageObjects.Preference.PreferenceDependencies;
-import TestUtils.FrameworkInitialization;
+import TestUtils.TestBase;
 import org.testng.annotations.Test;
 
-public class RotateTest extends FrameworkInitialization {
+public class RotateTest extends TestBase {
 
     @Test
     public void rotateDevice() {

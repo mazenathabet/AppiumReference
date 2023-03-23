@@ -1,9 +1,9 @@
 package IosTests;
 
-import TestUtils.FrameworkInitialization;
+import TestUtils.TestBase;
 import org.testng.annotations.Test;
 
-public class ScrollingTest extends FrameworkInitialization {
+public class ScrollingTest extends TestBase {
 
     //    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Test

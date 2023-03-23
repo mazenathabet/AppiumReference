@@ -1,11 +1,11 @@
 package IosTests;
 
 import IOSPageObjects.AlertViews.AlertViewsPage;
-import TestUtils.FrameworkInitialization;
+import TestUtils.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AlertsViewsTests extends FrameworkInitialization {
+public class AlertsViewsTests extends TestBase {
 
     //    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Test

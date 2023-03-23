@@ -1,10 +1,10 @@
 package AndroidTests;
 
 import AndroidPageObjects.MainMenuPage;
-import TestUtils.FrameworkInitialization;
+import TestUtils.TestBase;
 import org.testng.annotations.Test;
 
-public class ScrollingTests extends FrameworkInitialization {
+public class ScrollingTests extends TestBase {
 
     @Test
     public void scrollingIntoViewUsingUIAutomatorTest() {

@@ -1,11 +1,11 @@
 package AndroidTests;
 
 import AndroidPageObjects.Preference.PreferenceDependencies;
-import TestUtils.FrameworkInitialization;
+import TestUtils.TestBase;
 import Utils.AndroidActions;
 import org.testng.annotations.Test;
 
-public class appPackageActivityTest extends FrameworkInitialization {
+public class appPackageActivityTest extends TestBase {
     @Test
     public void appPackageActivityTest() {
         AndroidActions.StartAndroidActivity(driver,

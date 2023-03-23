@@ -2,11 +2,11 @@ package AndroidTests;
 
 import AndroidPageObjects.MainMenuPage;
 import AndroidPageObjects.Preference.PreferenceDependencies;
-import TestUtils.FrameworkInitialization;
+import TestUtils.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class change_wifi_name_test extends FrameworkInitialization {
+public class change_wifi_name_test extends TestBase {
 
     @Test
     public void appium_test() {

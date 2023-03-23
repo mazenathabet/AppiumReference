@@ -1,11 +1,11 @@
 package IosTests;
 
 import IOSPageObjects.PickerViewPage;
-import TestUtils.FrameworkInitialization;
+import TestUtils.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class PickerHandlingTest extends FrameworkInitialization {
+public class PickerHandlingTest extends TestBase {
 
     //    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Test

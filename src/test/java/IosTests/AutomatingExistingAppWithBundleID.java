@@ -1,6 +1,6 @@
 package IosTests;
 
-import TestUtils.FrameworkInitialization;
+import TestUtils.TestBase;
 import Utils.IosActions;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class AutomatingExistingAppWithBundleID extends FrameworkInitialization {
+public class AutomatingExistingAppWithBundleID extends TestBase {
 
 
     //    @Test(retryAnalyzer = RetryAnalyzer.class)

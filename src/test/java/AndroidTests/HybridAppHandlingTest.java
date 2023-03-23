@@ -1,6 +1,6 @@
 package AndroidTests;
 
-import TestUtils.FrameworkInitialization;
+import TestUtils.TestBase;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.Set;
 
-public class HybridAppHandlingTest extends FrameworkInitialization {
+public class HybridAppHandlingTest extends TestBase {
 
 
     @Test

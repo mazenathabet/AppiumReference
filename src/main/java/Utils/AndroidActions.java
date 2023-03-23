@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class AndroidActions extends AppiumUtils {
 
-    public static AndroidDriver driver;
+    private static AndroidDriver driver;
     private static DeviceRotation orientation;
     protected WebDriverWait wait;
 
